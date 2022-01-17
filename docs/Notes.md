@@ -11,3 +11,6 @@
 
 - Omit the confiuration
 `tsc file.ts`
+
+- Watch the change
+`tsc --watch`
