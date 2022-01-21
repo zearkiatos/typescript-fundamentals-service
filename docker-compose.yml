@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: typescript-fundamentals-service
+    volumes: 
+      - ".:/usr/src/app"
