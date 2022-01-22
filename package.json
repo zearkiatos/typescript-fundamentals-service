@@ -8,7 +8,9 @@
   },
   "scripts": {
     "audit": "npm audit",
-    "test": "jest"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest -c jest.config.js --coverage"
   },
   "repository": {
     "type": "git",
