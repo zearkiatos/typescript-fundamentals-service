@@ -10,7 +10,7 @@
     "audit": "npm audit",
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "jest"
+    "test": "jest -c jest.config.js --coverage"
   },
   "repository": {
     "type": "git",
