@@ -14,3 +14,6 @@
 
 - Watch the change
 `tsc --watch`
+
+- Param --strictNullChecks for restrict null assignation
+`tsc --watch src/main.ts --strictNullChecks`
