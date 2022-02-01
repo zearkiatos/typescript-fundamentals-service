@@ -14,4 +14,13 @@ const createPic = (
   size
 });
 
-export { createPicture, createPic };
+function handleError(code: number, message: string): never | string {
+    if (message === 'error') {
+        throw new Error(`${message}. Code error: ${code}`);
+    }
+    else {
+        return 'An error has occurred';
+    }
+} 
+
+export { createPicture, createPic, handleError };
