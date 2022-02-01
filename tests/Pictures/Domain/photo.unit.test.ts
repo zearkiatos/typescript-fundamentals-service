@@ -1,6 +1,6 @@
 import PhotoOrientation from "../../../src/PhotoOrientation";
 import { Photo } from '../../../src/Pictures/Domain/Photo';
-import { Picture } from '../../../src/Pictures/Domain/Picture';
+import { PictureHandler } from './utils/PictureHandler';
 describe("Unit test suite for Photo class", () => {
     test("Should implement and call the constructor with the data", () => {
       const title: string = 'Photo';
@@ -9,7 +9,7 @@ describe("Unit test suite for Photo class", () => {
 
       const photo = new Photo(title, date, orientation);
 
-      expect(photo).toI(Picture);
       expect(photo).toBeInstanceOf(Photo);
+      expect(PictureHandler.instanceOfPicture(photo)).toBeTruthy();
     });
   });
