@@ -12,4 +12,13 @@ describe("Unit test suite for Photo class", () => {
       expect(photo).toBeInstanceOf(Photo);
       expect(PictureHandler.instanceOfPicture(photo)).toBeTruthy();
     });
+
+    test("Should generate a picture", () => {
+      const picture = {title: 'Photo', date: '2022-01-31', orientation: PhotoOrientation.Panorama};
+      const expectResult = {title: 'Photo', date: '2022-01-31', orientation: PhotoOrientation.Panorama};
+      
+      const photo = Photo.generatePicture(picture);
+
+      expect(photo).toEqual(expectResult);
+    });
   });
