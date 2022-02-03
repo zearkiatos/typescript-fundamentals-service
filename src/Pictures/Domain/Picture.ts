@@ -1,10 +1,7 @@
 import PhotoOrientation from "../../PhotoOrientation";
-namespace Mercurio {
+import { Entity } from "../../Shared/Domain/Entity";
 
-}
-interface Picture {
-    title: string;
-    date: string;
+interface Picture extends Entity {
     orientation: PhotoOrientation;
 }
 
