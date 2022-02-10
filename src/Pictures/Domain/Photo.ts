@@ -1,7 +1,7 @@
 import PhotoOrientation from "../../PhotoOrientation";
-import { Picture } from "./Picture";
+import { IPicture } from "./IPicture";
 
-class Photo implements Picture {
+class Photo implements IPicture {
     title: string;
     date: string;
     orientation: PhotoOrientation;
@@ -12,7 +12,7 @@ class Photo implements Picture {
         this.orientation = orientation;
     }
 
-    static generatePicture (config: Picture) {
+    static generatePicture (config: IPicture) {
         const picture = {
             title: 'Default',
             date: Date.now().toString(),

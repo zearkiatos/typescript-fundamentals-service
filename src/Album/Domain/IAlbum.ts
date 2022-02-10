@@ -1,9 +1,9 @@
 import { Entity } from "../../Shared/Domain/Entity";
 
-interface Album extends Entity {
+interface IAlbum extends Entity {
     description: string;
 }
 
 export {
-    Album
+    IAlbum
 }

@@ -1,4 +1,3 @@
-import { Album } from '../../../src/Album/Domain/Album';
 import { AlbumHandler } from './utils/AlbumHandler';
 describe("Unit test suite for Album interface", () => {
     test("Should evaluate the implementation of Album interface", () => {
