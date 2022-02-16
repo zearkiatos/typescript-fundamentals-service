@@ -1,15 +1,26 @@
-import { Album } from '../../../src/Album/Domain/Album';
-import { AlbumHandler } from './utils/AlbumHandler';
-describe("Unit test suite for Album interface", () => {
-    test("Should evaluate the implementation of Album interface", () => {
-      const album = {
-          id: 1,
-          title: 'Meetups',
-          description: 'Lorem ipsum'
-      }
+import PhotoOrientation from "../../../src/PhotoOrientation";
+import { Album } from "../../../src/Album/Domain/Album";
+import { Picture } from "../../../src/Pictures/Domain/Picture";
+import { PictureBuild } from "../../builds/PictureBuild";
+describe("Unit test suite for Album class", () => {
+  test("Should return add list of pictures", () => {
+    const pictures: Picture[] = [
+      new PictureBuild().build(),
+      new PictureBuild()
+        .withId(2)
+        .withTitle('Photo2')
+        .withOrientation(PhotoOrientation.Panorama)
+        .build()
+    ];
+    const id: number = 1;
+    const title: string = "My Album";
 
-      const implementedInterface = AlbumHandler.instanceOfAlbum(album);
+    const album = new Album(id, title);
+    album.addPicture(pictures[0]);
+    album.addPicture(pictures[1]);
 
-      expect(implementedInterface).toBeTruthy();
-    });
+    expect(album.pictures).toEqual(pictures);
+    expect(album.id).toBe(id);
+    expect(album.title).toBe(title);
   });
+});

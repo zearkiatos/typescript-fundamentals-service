@@ -1,9 +1,20 @@
-import { Entity } from "../../Shared/Domain/Entity";
+import { Picture } from "../../Pictures/Domain/Picture";
 
-interface Album extends Entity {
-    description: string;
+class Album {
+  id: number;
+  title: string;
+  pictures: Picture[];
+
+  constructor(id: number, title: string) {
+    this.id = id;
+    this.title = title;
+    this.pictures = [];
+  }
+
+  addPicture(picture: Picture) {
+    this.pictures.push(picture);
+  }
+
 }
 
-export {
-    Album
-}
+export { Album };
