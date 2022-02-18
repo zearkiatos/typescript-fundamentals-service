@@ -23,4 +23,13 @@ describe("Unit test suite for Album class", () => {
     expect(album.id).toBe(id);
     expect(album.title).toBe(title);
   });
+
+  test("Should access to the public attributes", () => {
+    const album:Album = new Album(1,'Album');
+    album.id = 100;
+    album.title = "New Album";
+
+    expect(album.id).toBe(100);
+    expect(album.title).toBe('New Album');
+  });
 });

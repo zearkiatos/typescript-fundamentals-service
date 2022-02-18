@@ -1,8 +1,8 @@
 import PhotoOrientation from "../../PhotoOrientation";
-class Picture {
-  public id: number;
-  public title: string;
-  public orientation: PhotoOrientation;
+class PicturePrivate {
+  private id: number;
+  private title: string;
+  private orientation: PhotoOrientation;
 
   public constructor(id: number, title: string, orientation: PhotoOrientation) {
     this.id = id;
@@ -15,4 +15,4 @@ class Picture {
   }
 }
 
-export { Picture };
+export { PicturePrivate };
