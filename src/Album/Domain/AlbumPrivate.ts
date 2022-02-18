@@ -4,7 +4,7 @@ class AlbumPrivate {
   private id: number;
   private title: string;
   private pictures: Picture[];
-  #privateAttribute:boolean;
+  #privateAttribute: boolean;
 
   public constructor(id: number, title: string) {
     this.id = id;
@@ -17,6 +17,29 @@ class AlbumPrivate {
     this.pictures.push(picture);
   }
 
+  get Id() {
+    return this.id;
+  }
+
+  set Id(id: number) {
+    this.id = id;
+  }
+
+  get Title() {
+    return this.title;
+  }
+
+  set Title(title: string) {
+    this.title = title;
+  }
+
+  get Pictures() {
+    return this.pictures;
+  }
+
+  set Pictures(pictures: Picture[]) {
+    this.pictures = pictures;
+  }
 }
 
 export { AlbumPrivate };

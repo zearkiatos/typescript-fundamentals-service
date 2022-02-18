@@ -15,7 +15,7 @@ describe("Suite test unit for Album Private", () => {
       new PictureBuild().build(),
       new PictureBuild()
         .withId(2)
-        .withTitle('Photo2')
+        .withTitle("Photo2")
         .withOrientation(PhotoOrientation.Panorama)
         .build()
     ];
@@ -23,15 +23,37 @@ describe("Suite test unit for Album Private", () => {
     const title: string = "My Album";
 
     const album = new AlbumPrivate(id, title);
-    const albumSpy = jest.spyOn(album, 'addPicture');
+    const albumSpy = jest.spyOn(album, "addPicture");
     album.addPicture(pictures[0]);
     album.addPicture(pictures[1]);
-console.log(albumSpy.mock.calls[0]);
+
     expect(album).toBeDefined();
     expect(albumSpy).toHaveBeenCalled();
     expect(albumSpy).toBeCalledTimes(2);
     expect(albumSpy.mock.calls[0][0]).toEqual(pictures[0]);
     expect(albumSpy.mock.calls[1][0]).toEqual(pictures[1]);
+  });
 
+  test("Should edit and access the attributes", () => {
+    const pictures: Picture[] = [
+      new PictureBuild().build(),
+      new PictureBuild()
+        .withId(2)
+        .withTitle("Photo2")
+        .withOrientation(PhotoOrientation.Panorama)
+        .build()
+    ];
+    const id: number = 1;
+    const title: string = "My Album";
+
+    const album = new AlbumPrivate(id, title);
+    album.Id = 2;
+    album.Title = "My Album 2";
+    album.Pictures = pictures;
+
+    expect(album).toBeDefined();
+    expect(album.Id).toBe(2);
+    expect(album.Title).toBe("My Album 2");
+    expect(album.Pictures).toBe(pictures);
   });
 });

@@ -14,7 +14,6 @@ class Album {
   public addPicture(picture: Picture) {
     this.pictures.push(picture);
   }
-
 }
 
 export { Album };
