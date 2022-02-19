@@ -36,4 +36,11 @@ describe("Suite test unit for Picture Private", () => {
       expect(picture.Title).toBe('My Picture 2');
       expect(picture.Orientation).toBe(PhotoOrientation.Panorama);
   });
+
+  test("Should access to an static attribute photoOrientation", () => {
+    const photoOrientation = PicturePrivate.photoOrientation;
+
+      expect(photoOrientation).toBeDefined();
+      expect(photoOrientation).toEqual(PhotoOrientation);
+  });
 });
