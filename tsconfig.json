@@ -10,7 +10,9 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true,
     "rootDir": ".",
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "traceResolution": true
   },
   "exclude": ["node_modules", "tests"],
   "include": ["src/"]
