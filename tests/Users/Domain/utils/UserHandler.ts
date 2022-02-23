@@ -1,7 +1,7 @@
-import { User } from "../../../../src/Users/Domain/User";
+import { IUser } from "../../../../src/Users/Domain/IUser";
 
 abstract class UserHandler {
-  static instanceOfUser(object: any): object is User {
+  static instanceOfUser(object: any): object is IUser {
     return "id" in object && "username" in object && "isPro" in object;
   }
 }
